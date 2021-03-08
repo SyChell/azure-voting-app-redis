@@ -29,15 +29,10 @@ else:
 redis_server = os.environ['REDIS']
 
 # Redis Connection
-# try:
-if "REDIS_PWD" in os.environ:
-    r = redis.StrictRedis(host=redis_server,
-                    port=6380,
-                    password=os.environ['REDIS_PWD'],
-                    ssl=True)
-else:
-    r = redis.Redis(redis_server,
-                    port=6380)
+r = redis.StrictRedis(host=redis_server,
+                port=6380,
+                password=os.environ['REDIS_PWD'],
+                ssl=True)
 r.ping()
 #except redis.ConnectionError:
 #    exit('Failed to connect to Redis, terminating.')
@@ -87,4 +82,4 @@ def index():
             return render_template("index.html", value1=int(vote1), value2=int(vote2), button1=button1, button2=button2, title=title)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')
