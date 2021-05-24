@@ -1,0 +1,24 @@
+# systemd unit file for the slow python Service
+[Unit]
+
+# Human readable name of the unit
+Description=voting app
+
+[Service]
+# Command to execute when the service is started
+ExecStart=/usr/bin/python3 /opt/azure-voting-app-redis/azure-vote/azure-vote/app.py
+# service shows up immediately in systemd's logs
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=/opt/azure-voting-app-redis/.env.sh
+# set the user
+User=voting
+
+# Automatically restart the service if it crashes
+Restart=on-failure
+# Our service will notify systemd once it is up and running
+
+Type=simple
+KillMode=process
+TimeoutSec=900
+[Install]
+WantedBy=multi-user.target
