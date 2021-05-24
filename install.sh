@@ -8,7 +8,7 @@ voting_user="voting"
 sudo apt update
 sudo apt install -y python3-pip
 pip3 install -r ${base_dir}/azure-vote/azure-vote/requirements.txt
-# check if the user exists and if not, then create user
+# check if the user exists and if not, then create it
 if id -u "${voting_user}" > /dev/null 2>&1; then
     echo "No need add ${voting_user} user"
 else
