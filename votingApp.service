@@ -9,6 +9,7 @@ Description=voting app
 ExecStart=/usr/bin/python3 /opt/azure-voting-app-redis/azure-vote/azure-vote/app.py
 # service shows up immediately in systemd's logs
 Environment=PYTHONUNBUFFERED=1
+Environment=ALLOW_EMPTY_PASSWORD="yes"
 EnvironmentFile=/opt/azure-voting-app-redis/.env.sh
 # set the user
 User=voting
