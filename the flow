@@ -1,0 +1,7 @@
+the flow:
+- create terraform
+- terraform will ssh into the machine 
+- it will run a git clone command in /opt
+- it will create the env variable in /ot..../.env.sh
+- terraform will run the setup script (install.sh)
+- install.sh will update the machine and install python and dependencies, create the user, give it permissions, and run the unit
