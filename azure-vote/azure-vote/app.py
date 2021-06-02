@@ -27,7 +27,8 @@ else:
 
 # Redis configurations
 redis_server = os.environ['REDIS']
-
+print("redis_server= ", redis_server)
+print("redis_password=", os.environ['REDIS_PWD']) 
 # Redis Connection
 r = redis.StrictRedis(host=redis_server,
                 port=6380,
