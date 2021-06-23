@@ -40,6 +40,7 @@ r.ping()
 
 # Change title to host name to demo NLB
 # if app.config['SHOWHOST'] == "true":
+# change tite to hostname
 title = socket.gethostname()
 
 # Init Redis
